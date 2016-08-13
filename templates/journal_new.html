@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+	<body>
+		{% if posted_already %}
+		<img src="https://thumbs.dreamstime.com/x/oops-sign-18087812.jpg">
+		</br>
+		<a href='{{url_for('showJournalEntries')}}'>Return to entries</a>
+		<script type=text/javascript>
+			alert('Your daily post has been created. Either delete or edit today\'s post')
+		</script>
+
+		
+		{% else %}
+		<h1>ENTER THE MAGIC:</h1>
+
+		<textarea name='name' form='usrform' rows="10" cols="100">Enter post here...</textarea>
+		<form action="{{url_for('createNewJournalEntry')}}" method = 'POST' id='usrform'>
+			<input type = 'submit' value='POST'>
+		</form>
+		</br>
+		<a href="{{url_for('showJournalEntries')}}">Cancel</a>
+
+		{% endif %}
+
+	</body>
+
+</html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+	<body>
+		<h1>EDIT ENTRY</h1>
+
+		<textarea name='name' form='usrform' rows="10" cols="100">{{item.post}}</textarea>
+		<form action="{{url_for('editJournalEntry' ,journal_id=item.id)}}" method = 'POST' id='usrform'>
+			<input type = 'submit' value='EDIT'>
+		</form>
+		</br>
+		<a href="{{url_for('showJournalEntries')}}">Cancel</a>
+
+	</body>
+
+</html>

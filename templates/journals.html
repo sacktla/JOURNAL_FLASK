@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Jesus' Journal</title>
+	</head>
+
+	<body>
+		<h1>MY PERSONAL BLOG</h1>
+		<a href='{{url_for('createNewJournalEntry')}}'}>NEW POST</a>
+
+		{% for i in journals %}
+		<div>
+			
+			<h2>{{i.date}}</h2>
+			<p>{{i.post}}</p>
+			</br><a href='{{url_for('editJournalEntry',journal_id=i.id)}}'>EDIT</a>
+			</br><a href='{{url_for('deleteJournalEntry',journal_id=i.id)}}'>DELETE</a>
+			
+		</div>
+
+		{% endfor %}
+	</body>
+
+</html>
